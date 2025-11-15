@@ -16,5 +16,6 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 5173
 
-# Start the development server
-CMD ["npm", "run", "dev"]
+# Command to run the development server
+# The --host 0.0.0.0 is important for Docker to expose the server correctly
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
